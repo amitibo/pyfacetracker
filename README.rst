@@ -38,7 +38,7 @@ Testing
 To run the tests with the interpreter available as ``python``, use::
 
    cd examples
-   python face_image.py
+   python face_image.py path/to/image # path/to/image is a path to a color image
 
 
 Conditions of use

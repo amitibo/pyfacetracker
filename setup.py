@@ -15,7 +15,7 @@ OpenCV 2, authored by Jason Saragih and maintained by Kyle McDonald.
 """
 AUTHOR = 'Amit Aides'
 EMAIL = 'amitibo@tx.technion.ac.il'
-URL = 'https://bitbucket.org/amitibo/pyfacetrack'
+URL = 'https://bitbucket.org/amitibo/pyfacetracker'
 KEYWORDS = ["Face Tracking", "Image Processing", "Video Processing"]
 LICENSE = 'See separate LICENSE file'
 CLASSIFIERS = [
@@ -28,7 +28,7 @@ OPENCV_BASE = r'D:\amit\studies\code\opencv'
 OPENCV_LIB_DIRS=[OPENCV_BASE + r'\build_vs2008\lib\Release']
 OPENCV_VERSION = '249'
 
-FACETRACKER_BASE = r'..\FaceTracker'
+FACETRACKER_BASE = r'external\FaceTracker'
 
 OPENCV_INCLUDE_DIRS = [
     OPENCV_BASE + p for p in (
