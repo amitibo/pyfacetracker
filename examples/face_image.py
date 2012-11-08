@@ -32,13 +32,14 @@ def main(img_path):
     if tracker.update(gray):
         img = tracker.draw(img, conns, trigs)
 
-        obj3D = tracker.getObjectShape()
+        obj3D = tracker.get3DShape()
     
         fig3d = plt.figure()
         ax = fig3d.add_subplot(111, projection='3d')
         ax.scatter(obj3D[:66, 0], obj3D[66:132, 0], obj3D[132:, 0])
         for i in range(66):
             ax.text(obj3D[i], obj3D[i+66], obj3D[i+132], str(i))
+        ax.view_init(-90, -90)
 
     else:
         print 'Failed tracking face in image'

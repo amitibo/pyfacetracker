@@ -309,7 +309,7 @@ FaceTracker_getOrientation(FaceTracker* self, PyObject *args)
 
 
 static PyObject *
-FaceTracker_getShape(FaceTracker* self, PyObject *args)
+FaceTracker_get2DShape(FaceTracker* self, PyObject *args)
 {
     const Mat& shape = self->thisptr->_shape;
     const Mat& visibility = self->thisptr->_clm._visi[self->current_view];
@@ -319,7 +319,7 @@ FaceTracker_getShape(FaceTracker* self, PyObject *args)
 
 
 static PyObject *
-FaceTracker_getObjectShape(FaceTracker* self, PyObject *args)
+FaceTracker_get3DShape(FaceTracker* self, PyObject *args)
 {
     const Mat& mean = self->thisptr->_clm._pdm._M;
     const Mat& variation = self->thisptr->_clm._pdm._V;
@@ -346,8 +346,8 @@ static PyMethodDef FaceTracker_methods[] = {
     {"getPosition", (PyCFunction)FaceTracker_getPosition, METH_NOARGS, "Get the position of the face."},
     {"getScale", (PyCFunction)FaceTracker_getScale, METH_NOARGS, "Get the scale of the face."},
     {"getOrientation", (PyCFunction)FaceTracker_getOrientation, METH_NOARGS, "Get the orientation of the face."},
-    {"getShape", (PyCFunction)FaceTracker_getShape, METH_NOARGS, "Get the shape and visibility of the face."},
-    {"getObjectShape", (PyCFunction)FaceTracker_getObjectShape, METH_NOARGS, "Get the 3D point cloud of the face features."},
+    {"get2DShape", (PyCFunction)FaceTracker_get2DShape, METH_NOARGS, "Get the 2D shape and visibility of the face."},
+    {"get3DShape", (PyCFunction)FaceTracker_get3DShape, METH_NOARGS, "Get the 3D point cloud of the face features."},
     {"resetFrame", (PyCFunction)FaceTracker_resetFrame, METH_NOARGS, "Force the tracker to reset tracking."},
     {NULL}  /* Sentinel */
 };

@@ -4,8 +4,6 @@ import cv2.cv as cv
 import facetracker
 from video import create_capture
 from common import clock, draw_str
-import itertools
-import scipy.io as sio
 
 
 help_message = '''
@@ -20,18 +18,17 @@ if __name__ == '__main__':
     try: video_src = video_src[0]
     except: video_src = 0
     args = dict(args)
-    face_fn = args.get('--con', r"..\model\face.tracker")
-    con_fn = args.get('--con', r"..\model\face.con")
-    tri_fn  = args.get('--tri', r"..\model\face.tri")
-
+    face_fn = args.get('--con', r"..\external\FaceTracker\model\face.tracker")
+    con_fn = args.get('--con', r"..\external\FaceTracker\model\face.con")
+    tri_fn  = args.get('--tri', r"..\external\FaceTracker\model\face.tri")
+    
     tracker = facetracker.FaceTracker(face_fn)
     conns = facetracker.LoadCon(con_fn)
     trigs = facetracker.LoadTri(tri_fn)
 
-    cam = create_capture(video_src, fallback='synth:bg=../cpp/lena.jpg:noise=0.05')
+    cam = create_capture(video_src)
     tracker.setWindowSizes((7,))
 
-    shape3D_mat = []
     try:
         while True:
             t = clock()
@@ -48,11 +45,7 @@ if __name__ == '__main__':
                 tracker.getOrientation()
                 img = tracker.draw(img, conns, trigs)
                 
-                shape3D = tracker.getObjectShape().reshape((3, 66))
-                shape3D_mat.append(shape3D)
-                
             else:
-                shape3D_mat.append(-np.ones((3, 66)))
                 tracker.setWindowSizes((11, 9, 7))
                 
             dt = clock() - t
@@ -67,5 +60,3 @@ if __name__ == '__main__':
         
     cv2.destroyAllWindows() 			
 
-    if shape3D_mat != []:
-        sio.savemat('shape3D.mat', {'shape3D':shape3D_mat}, do_compression=True)
