@@ -5,7 +5,7 @@ import os
 
 NAME = 'pyFaceTracker'
 PACKAGE_NAME = 'facetracker'
-VERSION = '0.1.0'
+VERSION = '0.1.1'
 DESCRIPTION = 'A python wrapper for the FaceTracker library by Jason Mora Saragih'
 LONG_DESCRIPTION = """
 pyfacetracker is a thin wrapper around FaceTracker. It enables using
