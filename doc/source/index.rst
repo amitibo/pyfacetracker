@@ -1,4 +1,4 @@
-.. pycompsense documentation master file, created by
+.. pyfacetracker documentation master file, created by
    sphinx-quickstart on Sun Jul 22 13:55:50 2012.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.

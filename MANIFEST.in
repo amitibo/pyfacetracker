@@ -6,7 +6,8 @@ recursive-include facetracker *.py
 recursive-include external/FaceTracker/include *
 recursive-include external/FaceTracker/model *
 recursive-include external/FaceTracker/src *
-include external/FaceTracker *.md
+include external/FaceTracker/license.md
+include external/FaceTracker/readme.md
 recursive-include examples *.py
 recursive-include doc Makefile *.bat *.rst *.py
 recursive-include doc/images *.png

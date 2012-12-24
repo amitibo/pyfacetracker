@@ -1,10 +1,8 @@
 from __future__ import division
 import numpy as np
 import facetracker
-from scipy.misc import lena
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-import logging
 import Image
 import argparse
 
