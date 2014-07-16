@@ -24,9 +24,9 @@ CLASSIFIERS = [
     'Topic :: Scientific/Engineering'
 ]
 
-OPENCV_BASE = r'D:\amit\studies\code\opencv'
-OPENCV_LIB_DIRS=[OPENCV_BASE + r'\build_vs2008\lib\Release']
-OPENCV_VERSION = '249'
+OPENCV_BASE = r'D:\amit\opencv'
+OPENCV_LIB_DIRS=[OPENCV_BASE + r'\build\x64\vc9\lib']
+OPENCV_VERSION = '245'
 
 FACETRACKER_BASE = r'external\FaceTracker'
 

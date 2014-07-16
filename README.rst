@@ -16,10 +16,13 @@ Jason's code, which is available under a separate license.
 Installing
 ==========
 
-Use ``setup.py``::
+You will first need to update ``setup.py`` to point to the installation of
+OpenCV (i.e. set *OPENCV_BASE*, *OPENCV_LIB_DIRS* and *OPENCV_VERSION* global variables
+to their correct values). Then run ``setup.py``::
 
    python setup.py install
 
+.. Note:: Reid Mayo has created a tutorial_ for installing pyFaceTracker on linux.
 
 Reading the docs
 ================
@@ -60,3 +63,6 @@ Acknowledgement
 Thank-you to the people at <http://wingware.com/> for their policy of **free licenses for non-commercial open source developers**.
 
 .. image:: http://wingware.com/images/wingware-logo-180x58.png
+
+.. _tutorial:
+   http://reidmayo.com/2014/07/15/how-to-install-pyfacetracker-on-linux-fedora-19/
